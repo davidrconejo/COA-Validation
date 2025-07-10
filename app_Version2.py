@@ -1,13 +1,3 @@
-streamlit
-pytesseract
-pdf2image
-Pillow
-pandas
-openpyxl
-rapidfuzz
-unidecode
-
-
 import streamlit as st
 import pandas as pd
 from pdf2image import convert_from_bytes
