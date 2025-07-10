@@ -1,6 +1,6 @@
 import streamlit as st
 import pandas as pd
-from pdf2image import convert_from_bytes
+import fitz
 import pytesseract
 from PIL import Image
 from io import BytesIO
@@ -34,8 +34,14 @@ if submit and pdf_file and master_file:
         lugares = df_maestra['Lugar de Manufactura'].unique().tolist()
 
         # Convertir PDF a imágenes
-        images = convert_from_bytes(pdf_file.read())
+        pdf_doc = fitz.open(stream=pdf_file.read(), filetype="pdf")
+        images = []
 
+    for page in pdf_doc:
+    pix = page.get_pixmap(dpi=300)
+    img = Image.open(io.BytesIO(pix.tobytes("png")))
+    images.append(img)
+    
         # Analizar cada página
         results = []
         for i, img in enumerate(images):
