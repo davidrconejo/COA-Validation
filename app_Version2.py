@@ -38,9 +38,9 @@ if submit and pdf_file and master_file:
         images = []
 
     for page in pdf_doc:
-    pix = page.get_pixmap(dpi=300)
-    img = Image.open(io.BytesIO(pix.tobytes("png")))
-    images.append(img)
+        pix = page.get_pixmap(dpi=300)
+        img = Image.open(io.BytesIO(pix.tobytes("png")))
+        images.append(img)
     
         # Analizar cada página
         results = []
