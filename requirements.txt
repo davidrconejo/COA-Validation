@@ -6,3 +6,4 @@ pandas
 openpyxl
 rapidfuzz
 unidecode
+poppler-utils
