@@ -6,6 +6,7 @@ from PIL import Image
 from io import BytesIO
 from rapidfuzz import process, fuzz
 from unidecode import unidecode
+import io
 
 st.set_page_config(page_title="Validación de COAs", layout="centered")
 st.title("Validación Semanal de COAs (PDF escaneado + Lista Maestra Excel)")
